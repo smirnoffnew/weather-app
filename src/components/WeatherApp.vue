@@ -74,7 +74,7 @@
         }
 
         &.night {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url('../assets/images/night.jpg');
+            background-image: url('../assets/images/night.jpg');
         }
     }
 
