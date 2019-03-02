@@ -1,7 +1,10 @@
 <template>
   <div id="app">
-    <h1>aaaaaaaaaaaaaaaaaa</h1>
-    <WeatherApp></WeatherApp>
+    <div class="container">
+      <WeatherApp
+          :isDay="isDay"
+      ></WeatherApp>
+    </div>
   </div>
 </template>
 
@@ -10,19 +13,30 @@ import WeatherApp from './components/WeatherApp.vue'
 
 export default {
   name: 'app',
+
   components: {
     WeatherApp
+  },
+
+  computed: {
+    isDay: function () {
+      const now = new Date().getHours();
+      return  (now > 4) && (now < 18);
+    }
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+   body {
+     margin: 0;
+     padding: 0;
+   }
+  .container {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 </style>
