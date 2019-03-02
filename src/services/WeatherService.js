@@ -1,0 +1,84 @@
+/* eslint-disable */
+import axios from 'axios';
+
+export default class WeatherService {
+
+    constructor() {
+        this.axios = axios;
+        this.appId = '59681a1111eada6e97804823182254ae';
+        this.navigator = window.navigator;
+
+        this.initialData = {
+            clouds: { all: 0 },
+            wind: { speed: 0 },
+            main: {
+                humidity: 0,
+                temp: 0,
+                temp_max: 0,
+                temp_min: 0,
+            },
+            weather: [
+                {
+                    id: 0,
+                    description: `There's a problem at the weather forecast server`
+                }
+            ],
+            name: null,
+            sys: {
+                country: null
+            }
+        };
+
+        this.cloudiness = 0;
+        this.windSpeed = 0;
+        this.humidity = 0;
+        this.temperatureValue = 0;
+        this.temperatureHigh = 0;
+        this.temperatureLow = 0;
+        this.location = ' ';
+        this.description = 'Please connect to internet to see weather forecast';
+
+        this.init();
+    }
+
+    init() {
+        this.getWeather();
+    }
+
+    getWeather() {
+        this
+            .getPosition()
+            .then(position => position.coords)
+            .then(coordinates => this.axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${coordinates.latitude}&lon=${coordinates.longitude}&appid=${this.appId}&units=metric`))
+            .then( response => this.updateData(response.data))
+            .catch( err => {
+                this.updateData(this.initialData);
+
+            })
+    }
+
+    getPosition() {
+        return new Promise((resolve,reject) => {
+            this.navigator.onLine ?
+                navigator.geolocation.getCurrentPosition(resolve,reject) :
+                reject(this.description);
+        });
+    }
+
+    updateData(data) {
+        this.cloudiness = data.clouds.all;
+        this.windSpeed = data.wind.speed;
+        this.humidity = data.main.humidity;
+        this.temperatureValue = Math.round(data.main.temp);
+        this.temperatureHigh = Math.round(data.main.temp_max);
+        this.temperatureLow = Math.round(data.main.temp_min);
+        this.location = this.formatLocation(data.name, data.sys.country);
+        this.description = data.weather[0].description;
+        // this.weatherIcon = this.getWeatherIcon(data.weather[0].id);
+    }
+
+    formatLocation(city, country) {
+        return (city === null && country === null) ? '' : `${city}, ${country}`;
+    }
+
+}
