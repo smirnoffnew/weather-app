@@ -39,11 +39,11 @@ export default class WeatherService {
             }
         };
 
-        this.init();
+        this.getData();
 
     }
 
-    init() {
+    getData() {
         this.getWeather();
     }
 
@@ -74,13 +74,13 @@ export default class WeatherService {
         this.currentTemperature = Math.round(data.main.temp);
         this.maxTemperature = Math.round(data.main.temp_max);
         this.minTemperature = Math.round(data.main.temp_min);
-        this.location = this.formatLocation(data.name, data.sys.country);
+        this.location = WeatherService.formatLocation(data.name, data.sys.country);
         this.description = data.weather[0].description;
         this.weatherId = data.weather[0].id;
     }
 
-    formatLocation(city, country) {
-        return (city === null && country === null) ? '' : `${city}, ${country}`;
+    static formatLocation(city, country) {
+        return (city === null && country === null) ? '' : `${city} ${country}`;
     }
 
 }
