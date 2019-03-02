@@ -1,5 +1,11 @@
 <template>
     <main>
+        <MeasurementsComponent
+                :cloudiness="weather.cloudiness"
+                :windSpeed="weather.windSpeed"
+                :humidity="weather.humidity"
+        ></MeasurementsComponent>
+
         <TemperatureComponent
                 :current="weather.currentTemperature"
                 :max="weather.maxTemperature"
@@ -19,6 +25,7 @@
 
 <script>
     import WeatherService from '../services/WeatherService';
+    import MeasurementsComponent from "./MeasurementsComponent";
     import TemperatureComponent from './TemperatureComponent';
     import LocationComponent from "./LocationComponent";
     import WeatherIconComponent from "./WeatherIconComponent";
@@ -27,6 +34,7 @@
         name: 'WeatherApp',
 
         components: {
+            MeasurementsComponent,
             TemperatureComponent,
             LocationComponent,
             WeatherIconComponent
