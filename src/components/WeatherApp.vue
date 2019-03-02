@@ -1,27 +1,34 @@
 <template>
-    <button @click="getw"> get </button>
+    <main>
+        <TemperatureComponent
+                :current="weather.currentTemperature"
+                :max="weather.maxTemperature"
+                :min="weather.minTemperature"
+        ></TemperatureComponent>
+
+        <LocationComponent
+                :location="this.weather.location"
+                :description="this.weather.description"
+        ></LocationComponent>
+    </main>
 </template>
 
 <script>
-    import WeatherService from '../services/WeatherService'
+    import WeatherService from '../services/WeatherService';
+    import TemperatureComponent from './TemperatureComponent';
+    import LocationComponent from "./LocationComponent";
 
     export default {
         name: 'WeatherApp',
 
         components: {
-
+            TemperatureComponent,
+            LocationComponent
         },
 
         data() {
             return {
-                forecast: new WeatherService
-            }
-        },
-
-        methods: {
-            getw: function () {
-                console.log('this.forecast', this.forecast);
-                console.log('aaaaaaaaaaaaaaaa');
+                weather: new WeatherService
             }
         }
     }

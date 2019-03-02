@@ -8,6 +8,15 @@ export default class WeatherService {
         this.appId = '59681a1111eada6e97804823182254ae';
         this.navigator = window.navigator;
 
+        this.cloudiness = 0;
+        this.windSpeed = 0;
+        this.humidity = 0;
+        this.currentTemperature = 0;
+        this.maxTemperature = 0;
+        this.minTemperature = 0;
+        this.location = ' ';
+        this.description = 'Please connect to internet to see weather forecast';
+
         this.initialData = {
             clouds: { all: 0 },
             wind: { speed: 0 },
@@ -29,16 +38,8 @@ export default class WeatherService {
             }
         };
 
-        this.cloudiness = 0;
-        this.windSpeed = 0;
-        this.humidity = 0;
-        this.temperatureValue = 0;
-        this.temperatureHigh = 0;
-        this.temperatureLow = 0;
-        this.location = ' ';
-        this.description = 'Please connect to internet to see weather forecast';
-
         this.init();
+
     }
 
     init() {
@@ -50,11 +51,11 @@ export default class WeatherService {
             .getPosition()
             .then(position => position.coords)
             .then(coordinates => this.axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${coordinates.latitude}&lon=${coordinates.longitude}&appid=${this.appId}&units=metric`))
-            .then( response => this.updateData(response.data))
-            .catch( err => {
-                this.updateData(this.initialData);
-
+            .then( response => {
+                this.updateData(response.data)
+                console.log(response.data);
             })
+            .catch( () => this.updateData(this.initialData))
     }
 
     getPosition() {
@@ -69,9 +70,9 @@ export default class WeatherService {
         this.cloudiness = data.clouds.all;
         this.windSpeed = data.wind.speed;
         this.humidity = data.main.humidity;
-        this.temperatureValue = Math.round(data.main.temp);
-        this.temperatureHigh = Math.round(data.main.temp_max);
-        this.temperatureLow = Math.round(data.main.temp_min);
+        this.currentTemperature = Math.round(data.main.temp);
+        this.maxTemperature = Math.round(data.main.temp_max);
+        this.minTemperature = Math.round(data.main.temp_min);
         this.location = this.formatLocation(data.name, data.sys.country);
         this.description = data.weather[0].description;
         // this.weatherIcon = this.getWeatherIcon(data.weather[0].id);
