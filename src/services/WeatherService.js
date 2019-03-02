@@ -16,6 +16,7 @@ export default class WeatherService {
         this.minTemperature = 0;
         this.location = ' ';
         this.description = 'Please connect to internet to see weather forecast';
+        this.weatherId = 0;
 
         this.initialData = {
             clouds: { all: 0 },
@@ -75,7 +76,7 @@ export default class WeatherService {
         this.minTemperature = Math.round(data.main.temp_min);
         this.location = this.formatLocation(data.name, data.sys.country);
         this.description = data.weather[0].description;
-        // this.weatherIcon = this.getWeatherIcon(data.weather[0].id);
+        this.weatherId = data.weather[0].id;
     }
 
     formatLocation(city, country) {

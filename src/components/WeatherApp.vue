@@ -10,6 +10,10 @@
                 :location="this.weather.location"
                 :description="this.weather.description"
         ></LocationComponent>
+
+        <WeatherIconComponent
+            :weatherId="this.weather.weatherId"
+        ></WeatherIconComponent>
     </main>
 </template>
 
@@ -17,13 +21,15 @@
     import WeatherService from '../services/WeatherService';
     import TemperatureComponent from './TemperatureComponent';
     import LocationComponent from "./LocationComponent";
+    import WeatherIconComponent from "./WeatherIconComponent";
 
     export default {
         name: 'WeatherApp',
 
         components: {
             TemperatureComponent,
-            LocationComponent
+            LocationComponent,
+            WeatherIconComponent
         },
 
         data() {
