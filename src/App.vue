@@ -20,9 +20,8 @@
 
         computed: {
             isDay: function () {
-                // const now = new Date().getHours();
-                // return (now > 4) && (now < 18);
-                return true;
+                const now = new Date().getHours();
+                return (now > 4) && (now < 18);
             }
         }
     }

@@ -31,7 +31,7 @@
     import MeasurementsComponent from "./MeasurementsComponent";
     import TemperatureComponent from './TemperatureComponent';
     import LocationComponent from "./LocationComponent";
-    import WeatherIconComponent from "./WeatherIconComponent";
+    import WeatherIconComponent from "./IconComponent";
     import TimeComponent from "./TimeComponent";
 
     export default {
