@@ -52,10 +52,7 @@ export default class WeatherService {
             .getPosition()
             .then(position => position.coords)
             .then(coordinates => this.axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${coordinates.latitude}&lon=${coordinates.longitude}&appid=${this.appId}&units=metric`))
-            .then( response => {
-                this.updateData(response.data)
-                console.log(response.data);
-            })
+            .then( response => this.updateData(response.data))
             .catch( () => this.updateData(this.initialData))
     }
 
