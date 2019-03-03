@@ -37,6 +37,13 @@
     export default {
         name: 'WeatherApp',
 
+        props: {
+            isDay: {
+                type: Boolean,
+                required: true
+            }
+        },
+
         components: {
             MeasurementsComponent,
             TemperatureComponent,
@@ -47,7 +54,7 @@
 
         data() {
             return {
-                interval:'',
+                interval: '',
                 weather: new WeatherService
             }
         },
@@ -64,14 +71,7 @@
             this.runUpdates()
         },
 
-        props: {
-            isDay: {
-                type: Boolean,
-                required: true
-            }
-        },
-
-        beforeDestroy () {
+        beforeDestroy() {
             clearInterval(this.interval)
         },
 

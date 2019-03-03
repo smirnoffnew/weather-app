@@ -14,15 +14,15 @@
     export default {
         name: 'app',
 
+        components: {
+            WeatherApp
+        },
+
         data : function(){
             return {
                 interval:'',
                 isDay: true
             }
-        },
-
-        components: {
-            WeatherApp
         },
 
         methods: {
