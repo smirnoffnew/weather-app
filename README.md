@@ -1,3 +1,5 @@
+https://smirnoffnew.github.io/weather-app/
+
 # weather-app
 
 ## Project setup
