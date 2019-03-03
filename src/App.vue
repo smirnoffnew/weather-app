@@ -22,7 +22,7 @@
             isDay: function () {
                 // const now = new Date().getHours();
                 // return (now > 4) && (now < 18);
-                return true;
+                return false;
             }
         }
     }
@@ -31,10 +31,21 @@
 <style lang="scss">
     body {
         font-family: 'Open Sans', sans-serif;
+        color: #212121;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         margin: 0;
         padding: 0;
+    }
+
+    a {
+        text-decoration: none;
+        color: inherit;
+        transition: color .2s ease-in;
+    }
+
+    a:hover {
+        color: grey;
     }
 
     .container {
@@ -45,11 +56,11 @@
         align-items: center;
 
         &.day {
-            background-image: linear-gradient(#E8B175, rgba(0, 0, 0, 0.2)) ;
+            background-image: linear-gradient(#E8B175, rgba(0, 0, 0, 0.2));
         }
 
         &.night {
-            background-image: linear-gradient(#585FAC, rgba(0, 0, 0, 0.2)) ;
+            background-image: linear-gradient(#585FAC, rgba(0, 0, 0, 0.2));
         }
     }
 </style>

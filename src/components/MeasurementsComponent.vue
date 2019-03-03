@@ -1,17 +1,17 @@
 <template>
     <section>
         <div class="cloudiness">
-            <weather-icon icon="cloud" />
+            <weather-icon icon="cloud"/>
             <span>{{ cloudiness }}</span>
             <span>&percnt;</span>
         </div>
         <div class="wind-speed">
-            <weather-icon icon="strong-wind" />
+            <weather-icon icon="strong-wind"/>
             <span>{{ windSpeed }}</span>
             <span>m/s</span>
         </div>
         <div class="humidity">
-            <weather-icon icon="humidity" />
+            <weather-icon icon="humidity"/>
             <span>{{ humidity }}</span>
             <span>&percnt;</span>
         </div>
@@ -45,6 +45,18 @@
     }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+    section {
+        font-size: 25px;
+        font-weight: bold;
+        width: 100%;
+        padding-top: 25px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
 
+        & i {
+            margin-right: 5px;
+        }
+    }
 </style>

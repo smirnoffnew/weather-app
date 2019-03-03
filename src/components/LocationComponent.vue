@@ -21,6 +21,21 @@
     }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+    section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
 
+        & .location {
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        & .description {
+            text-transform: capitalize;
+            text-align: center;
+        }
+    }
 </style>

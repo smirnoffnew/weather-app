@@ -18,7 +18,8 @@
         ></LocationComponent>
 
         <WeatherIconComponent
-            :weatherId="this.weather.weatherId"
+                :isDay="isDay"
+                :weatherId="this.weather.weatherId"
         ></WeatherIconComponent>
     </main>
 </template>
@@ -67,7 +68,7 @@
         flex-direction: column;
         justify-content: space-around;
         align-items: center;
-        box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+        box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
 
         &.day {
             background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url('../assets/images/day.jpg');
