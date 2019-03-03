@@ -21,7 +21,7 @@
         data : function(){
             return {
                 interval:'',
-                isDay: true
+                isDay: (new Date().getHours() > 4) && (new Date().getHours() < 18)
             }
         },
 
@@ -35,7 +35,7 @@
         },
 
         mounted: function () {
-            this.runUpdates()
+            this.runUpdates();
         },
 
         beforeDestroy () {
