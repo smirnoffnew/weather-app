@@ -14,16 +14,33 @@
     export default {
         name: 'app',
 
+        data : function(){
+            return {
+                interval:'',
+                isDay: true
+            }
+        },
+
         components: {
             WeatherApp
         },
 
-        computed: {
-            isDay: function () {
-                const now = new Date().getHours();
-                return (now > 4) && (now < 18);
+        methods: {
+            runUpdates: function () {
+                this.interval = setInterval(() => {
+                    const now = new Date().getHours();
+                    this.isDay = (now > 4) && (now < 18);
+                }, 3600000);
             }
-        }
+        },
+
+        mounted: function () {
+            this.runUpdates()
+        },
+
+        beforeDestroy () {
+            clearInterval(this.interval)
+        },
     }
 </script>
 

@@ -47,8 +47,21 @@
 
         data() {
             return {
+                interval:'',
                 weather: new WeatherService
             }
+        },
+
+        methods: {
+            runUpdates: function () {
+                this.interval = setInterval(() => {
+                    this.weather.getData();
+                }, 600000);
+            }
+        },
+
+        mounted: function () {
+            this.runUpdates()
         },
 
         props: {
@@ -56,7 +69,11 @@
                 type: Boolean,
                 required: true
             }
-        }
+        },
+
+        beforeDestroy () {
+            clearInterval(this.interval)
+        },
 
     }
 </script>
