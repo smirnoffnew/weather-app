@@ -22,7 +22,7 @@
             isDay: function () {
                 // const now = new Date().getHours();
                 // return (now > 4) && (now < 18);
-                return false;
+                return true;
             }
         }
     }

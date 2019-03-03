@@ -62,6 +62,10 @@
 </script>
 
 <style scoped>
+    section {
+        margin-bottom: -45px;
+    }
+
     i {
         font-size: 100px;
     }

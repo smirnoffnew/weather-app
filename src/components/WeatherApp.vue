@@ -21,6 +21,8 @@
                 :isDay="isDay"
                 :weatherId="this.weather.weatherId"
         ></WeatherIconComponent>
+
+        <TimeComponent></TimeComponent>
     </main>
 </template>
 
@@ -30,6 +32,7 @@
     import TemperatureComponent from './TemperatureComponent';
     import LocationComponent from "./LocationComponent";
     import WeatherIconComponent from "./WeatherIconComponent";
+    import TimeComponent from "./TimeComponent";
 
     export default {
         name: 'WeatherApp',
@@ -38,7 +41,8 @@
             MeasurementsComponent,
             TemperatureComponent,
             LocationComponent,
-            WeatherIconComponent
+            WeatherIconComponent,
+            TimeComponent
         },
 
         data() {
