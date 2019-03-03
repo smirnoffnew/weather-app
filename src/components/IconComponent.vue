@@ -13,8 +13,8 @@
         <weather-icon v-if="(weatherId === 802 && isDay)" icon="day-cloudy"/>
 
         <!--broken clouds 803 // 04-->
-        <weather-icon v-if="(weatherId === 803 && !isDay)" icon="cloudy"/>
-        <weather-icon v-if="(weatherId === 803 && isDay)" icon="cloudy"/>
+        <weather-icon v-if="( (weatherId === 803 || weatherId === 804) && !isDay)" icon="cloudy"/>
+        <weather-icon v-if="( (weatherId === 803 || weatherId === 804) && isDay)" icon="cloudy"/>
 
         <!--shower rain 300 321 // 09-->
         <weather-icon v-if="(weatherId > 300) && (weatherId < 321) && !isDay" icon="showers"/>

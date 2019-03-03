@@ -17,10 +17,10 @@
                 :description="this.weather.description"
         ></LocationComponent>
 
-        <WeatherIconComponent
+        <IconComponent
                 :isDay="isDay"
                 :weatherId="this.weather.weatherId"
-        ></WeatherIconComponent>
+        ></IconComponent>
 
         <TimeComponent></TimeComponent>
     </main>
@@ -31,7 +31,7 @@
     import MeasurementsComponent from "./MeasurementsComponent";
     import TemperatureComponent from './TemperatureComponent';
     import LocationComponent from "./LocationComponent";
-    import WeatherIconComponent from "./IconComponent";
+    import IconComponent from "./IconComponent";
     import TimeComponent from "./TimeComponent";
 
     export default {
@@ -41,7 +41,7 @@
             MeasurementsComponent,
             TemperatureComponent,
             LocationComponent,
-            WeatherIconComponent,
+            IconComponent,
             TimeComponent
         },
 
