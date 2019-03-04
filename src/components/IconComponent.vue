@@ -64,6 +64,11 @@
 <style scoped>
     section {
         margin-bottom: -25px;
+
+        text-shadow: 0px 1px 0px #000,
+        0px 5px 10px rgba(0,0,0,0.15),
+        0px 10px 2px rgba(0,0,0,0.1),
+        0px 15px 30px rgba(0,0,0,0.1);
     }
 
     i {
