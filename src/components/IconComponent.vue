@@ -17,23 +17,23 @@
         <weather-icon v-if="( (weatherId === 803 || weatherId === 804) && isDay)" icon="cloudy"/>
 
         <!--shower rain 300 321 // 09-->
-        <weather-icon v-if="(weatherId > 300) && (weatherId < 321) && !isDay" icon="showers"/>
-        <weather-icon v-if="(weatherId > 300) && (weatherId < 321) && isDay" icon="showers"/>
+        <weather-icon v-if="(weatherId >= 300) && (weatherId <= 321) && !isDay" icon="showers"/>
+        <weather-icon v-if="(weatherId >= 300) && (weatherId <= 321) && isDay" icon="showers"/>
 
         <!--rain 500 504 // 10-->
-        <weather-icon v-if="(weatherId > 500) && (weatherId < 504)" icon="rain"/>
+        <weather-icon v-if="(weatherId >= 500) && (weatherId <= 531)" icon="rain"/>
 
         <!--thunderstorm 200 232 // 11-->
-        <weather-icon v-if="(weatherId > 200) && (weatherId < 232) && !isDay" icon="night-thunderstorm"/>
-        <weather-icon v-if="(weatherId > 200) && (weatherId < 232) && isDay" icon="day-thunderstorm"/>
+        <weather-icon v-if="(weatherId >= 200) && (weatherId <= 232) && !isDay" icon="night-thunderstorm"/>
+        <weather-icon v-if="(weatherId >= 200) && (weatherId <= 232) && isDay" icon="day-thunderstorm"/>
 
         <!--snow 600 622 // 13-->
-        <weather-icon v-if="(weatherId > 600) && (weatherId < 622) && !isDay" icon="night-alt-snow"/>
-        <weather-icon v-if="(weatherId > 600) && (weatherId < 622) && isDay" icon="day-snow"/>
+        <weather-icon v-if="(weatherId >= 600) && (weatherId <= 622) && !isDay" icon="night-alt-snow"/>
+        <weather-icon v-if="(weatherId >= 600) && (weatherId <= 622) && isDay" icon="day-snow"/>
 
         <!--mist 701 781 // 50-->
-        <weather-icon v-if="(weatherId > 701) && (weatherId < 781) && !isDay" icon="night-fog"/>
-        <weather-icon v-if="(weatherId > 701) && (weatherId < 781) && isDay" icon="day-fog"/>
+        <weather-icon v-if="(weatherId >= 701) && (weatherId <= 781) && !isDay" icon="night-fog"/>
+        <weather-icon v-if="(weatherId >= 701) && (weatherId <= 781) && isDay" icon="day-fog"/>
 
     </section>
 </template>
