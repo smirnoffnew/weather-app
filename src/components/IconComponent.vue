@@ -63,7 +63,7 @@
 
 <style scoped>
     section {
-        margin-bottom: -45px;
+        margin-bottom: -25px;
     }
 
     i {
