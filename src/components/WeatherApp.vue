@@ -92,11 +92,11 @@
         box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
 
         &.day {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url('../assets/images/day.jpg');
+            background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url('../assets/images/day.png');
         }
 
         &.night {
-            background-image: url('../assets/images/night.jpg');
+            background-image: url('../assets/images/night.png');
         }
     }
 

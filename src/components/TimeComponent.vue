@@ -69,7 +69,10 @@
     }
 
     .shadow {
-        text-shadow: 0 0 15px rgba(100, 100, 100, .35);
+        text-shadow: 0px 0.5px 0px #000,
+        0px 2px 4px rgba(0,0,0,0.1),
+        0px 4px 1px rgba(0,0,0,0.1),
+        0px 4px 4px rgba(0,0,0,0.1);
     }
 
 </style>
