@@ -103,8 +103,8 @@
 
     @media screen and (min-width: 450px) {
         main {
-            width: 330px;
-            height: 600px;
+            width: 360px;
+            height: 640px;
             border-radius: 5px;
         }
     }

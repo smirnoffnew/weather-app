@@ -55,10 +55,10 @@
         flex-direction: row;
         justify-content: space-evenly;
 
-        text-shadow: 0px 1px 0px #000,
-        0px 5px 8px rgba(0,0,0,0.15),
-        0px 8px 2px rgba(0,0,0,0.1),
-        0px 8px 8px rgba(0,0,0,0.1);
+        text-shadow: 0px 0.5px 0px #000,
+        0px 2px 4px rgba(0,0,0,0.15),
+        0px 4px 1px rgba(0,0,0,0.1),
+        0px 4px 4px rgba(0,0,0,0.1);
 
         & i {
             margin-right: 5px;
